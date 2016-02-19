@@ -1,5 +1,4 @@
-var readlineSync = require('readline-sync');
-
+// Checks if a given number exists in a given array.
 function contains(a, elem){
 	for (var i = 0; i < a.length; i++) {
 		if(a[i] === elem){
@@ -9,51 +8,49 @@ function contains(a, elem){
 	return false
 }
 
+// Checks if a given number is even
 function isEven(num){
 	return num % 2 == 0;
 }
 
-function fibCalc(number){
-	switch (parseInt(number)) {
-	    case 0:
-	        return 0;
-	        break;
-	    case 1:
-	        return 1;
-	        break;
-	    case 2:
-	        return 1;
-	        break;
-	    case 3:
-	        return 2;
-	        break;
-	    case 4:
-	        return 4;
-	        break;
-	    default:
-			return fibCalc(number-1)+fibCalc(number-2)+fibCalc(number-3)+fibCalc(number-4)+fibCalc(number-5);
-	        break;
-	}
-}
-
-function Hackbonacci(num){
+// Calculate the Hackbonacci of a number iteratively, and Calculate the number of uneven numbers inside a Hackbonacci sequence of numbers.
+function oddHackbonacci(number){
 	var fibNumbers = [];
-	var temporal_number=0;
+	var unevenNumbers = [];
+	var temp_number=0;
 
-	for (var i = 0; i <= num; i++) {
-		temporal_number=fibCalc(i);
-		if(!isEven(temporal_number)){
-			if(!contains(fibNumbers, temporal_number)){
-				fibNumbers.push(temporal_number);
+	for (var i = 0; i <= number; i++) {
+		switch (i) {
+		    case 0:
+		    	temp_number=0;
+		    	break;
+		    case 1:
+		    	temp_number=1;
+		        break;
+		    case 2:
+		    	temp_number=1;
+		        break;
+		    case 3:
+		    	temp_number=2;
+		        break;
+		    case 4:
+		    	temp_number=4;
+		        break;
+		    default:
+		    	temp_number=fibNumbers[i-1]+fibNumbers[i-2]+fibNumbers[i-3]+fibNumbers[i-4]+fibNumbers[i-5];
+		        break;
+		}
+		fibNumbers.push(temp_number);
+
+		if(!isEven(temp_number)){
+			if(!contains(unevenNumbers, temp_number)){
+				unevenNumbers.push(temp_number);
 			}
 		}
 	}
-
-	return fibNumbers.length;
+	return unevenNumbers.length;
 }
 
-// A User ​
-var number = readlineSync.question('Introduzca hackbonacci a calcular:\t');
-var arr = Hackbonacci(number);
-
-console.log(arr);
+// Testing the program....
+// var value = oddHackbonacci(15);
+// console.log(value);

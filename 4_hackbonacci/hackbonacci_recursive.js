@@ -1,5 +1,4 @@
-var readlineSync = require('readline-sync');
-
+// Checks if a given number exists in a given array.
 function contains(a, elem){
 	for (var i = 0; i < a.length; i++) {
 		if(a[i] === elem){
@@ -9,10 +8,12 @@ function contains(a, elem){
 	return false
 }
 
+// Checks if a given number is even
 function isEven(num){
 	return num % 2 == 0;
 }
 
+// Calculate the Hackbonacci of a number recursively.
 function fibCalc(number){
 	switch (parseInt(number)) {
 	    case 0:
@@ -36,7 +37,8 @@ function fibCalc(number){
 	}
 }
 
-function Hackbonacci(num){
+// Calculate the number of uneven numbers inside a Hackbonacci sequence of numbers.
+function oddHackbonacci(num){
 	var fibNumbers = [];
 	var temporal_number=0;
 
@@ -52,8 +54,7 @@ function Hackbonacci(num){
 	return fibNumbers.length;
 }
 
-// A User ​
-var number = readlineSync.question('Introduzca hackbonacci a calcular:\t');
-var arr = Hackbonacci(number);
 
-console.log(arr);
+// Testing the program....
+// var value = oddHackbonacci(15);
+// console.log(value);
