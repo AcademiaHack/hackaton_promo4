@@ -13,8 +13,40 @@ function isEven(num){
 	return num % 2 == 0;
 }
 
-// Calculate the Hackbonacci of a number iteratively, and Calculate the number of uneven numbers inside a Hackbonacci sequence of numbers.
-function oddHackbonacci(number){
+// Calculate the Hackbonacci array of a number iteratively
+function hackbonacciArray(number){
+	var fibNumbers = [];
+	var unevenNumbers = [];
+	var temp_number=0;
+
+	for (var i = 0; i <= number; i++) {
+		switch (i) {
+		    case 0:
+		    	temp_number=0;
+		    	break;
+		    case 1:
+		    	temp_number=1;
+		        break;
+		    case 2:
+		    	temp_number=1;
+		        break;
+		    case 3:
+		    	temp_number=2;
+		        break;
+		    case 4:
+		    	temp_number=4;
+		        break;
+		    default:
+		    	temp_number=fibNumbers[i-1]+fibNumbers[i-2]+fibNumbers[i-3]+fibNumbers[i-4]+fibNumbers[i-5];
+		        break;
+		}
+		fibNumbers.push(temp_number);
+	}
+	return fibNumbers;
+}
+
+// Calculate the odd Hackbonacci array of a number iteratively
+function oddHackbonacciArray(number){
 	var fibNumbers = [];
 	var unevenNumbers = [];
 	var temp_number=0;
@@ -48,7 +80,12 @@ function oddHackbonacci(number){
 			}
 		}
 	}
-	return unevenNumbers.length;
+	return unevenNumbers;
+}
+
+// Calculate the number of uneven numbers inside a Hackbonacci sequence of numbers.
+function oddHackbonacci(number){
+	return oddHackbonacciArray(number).length;
 }
 
 // Testing the program....

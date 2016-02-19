@@ -11,28 +11,36 @@ function nextNumberLast(number){
 // Split function for varsion sting array submitted
 function splitAndNumberTransform(phrase){
 	return phrase.split('.').map(function(elem) {
-	  return parseInt(elem);
+	  return isNaN(parseInt(elem)) ? elem : parseInt(elem) ;
 	});
 }
 
+// Check if a variable is a number
+function isInt(value) {
+  return !isNaN(value) && 
+         parseInt(Number(value)) == value && 
+         !isNaN(parseInt(value, 10));
+}
+	
 // Calculates the next version of the version string submitted
 function nextVersion(version){
-	if(version === ""){
-		return "";
-	}else{
-		var old_version_array = splitAndNumberTransform(version);
-		var new_version_array = [];
-		var transformed=false;
-		var temp = 0;
+	var old_version_array = splitAndNumberTransform(version);
+	var new_version_array = [];
+	var transformed=false;
+	var temp = 0;
+	var old_number=0;
 
-		for (var i = old_version_array.length - 1; i >= 0; i--) {
+	for (var i = old_version_array.length - 1; i >= 0; i--) {
+		if(isInt(old_version_array[i])){
+			old_number=old_version_array[i];
+			
 			if(transformed){
-				new_version_array.unshift(old_version_array[i]);
+				new_version_array.unshift(old_number);
 			}else{
 				if(i===0){
-					new_version_array.unshift(nextNumberLast(old_version_array[i]));
+					new_version_array.unshift(nextNumberLast(old_number));
 				}else{
-					temp = nextNumber(old_version_array[i]);
+					temp = nextNumber(old_number);
 					if(temp === 0){
 						new_version_array.unshift(temp);
 					}else{
@@ -41,10 +49,12 @@ function nextVersion(version){
 					}
 				}
 			}
-		}
-
-		return new_version_array.join('.');
+		}else{
+			new_version_array.unshift(old_version_array[i]);
+		}		
 	}
+
+	return new_version_array.join('.');
 }
 
 // Testing the program...
@@ -56,6 +66,6 @@ function nextVersion(version){
 
 $("#text").keyup( function() {
     var version = $("#text").val();
-    var decrypted = nextVersion(version);
+    var decrypted = version.length > 0 ? nextVersion(version) : "";
     $("#answer").html(decrypted);
 });
