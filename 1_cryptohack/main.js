@@ -32,4 +32,4 @@ function translate(key) {
   return decrypted.join('');
 }
 
-console.log(translate('IlM'));
+console.log(translate('IlM3434.xi989'));
