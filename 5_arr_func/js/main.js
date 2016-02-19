@@ -12,7 +12,7 @@ function wrapper(number) {
   }
 }
 
-$("#put").keyup( function() {
+$("#capacity").keyup( function() {
   var example_test = $("#text").val();
   var text_to_find = $("#get").val();
   var new_word = $(this).val();
