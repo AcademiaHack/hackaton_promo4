@@ -32,4 +32,10 @@ function translate(key) {
   return decrypted.join('');
 }
 
-console.log(translate('IlM3434.xi989'));
+$("#text").keyup( function() {
+    var text_to_translate = $("#text").val();
+    var decrypted = translate(text_to_translate);
+    $("#answer").html(decrypted);
+});
+
+/*console.log(translate('IlM3434.xi989'));*/

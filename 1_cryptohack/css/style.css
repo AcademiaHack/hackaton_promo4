@@ -78,7 +78,7 @@ ul.second li {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	width: 50%;
-	padding: 20px;
+	padding: 20px 20px 0;
 	background-color: #fff;
 }
 
@@ -101,25 +101,10 @@ ul.second li {
 	outline: 0;
 }
 
-.message-box .button {
-	margin-top: 20px;
-	display: inline-block;
-	color: #fff;
-	background-color: #286090;
-	font-size: 20px;
-	padding: 10px 20px;
-    border: 1px solid #1461B9;
-    transition: all 0.5s;
-    text-transform: uppercase;
-}
-
-.message-box .button:hover {
-    background-color: rgba(11,52,156,0.5);
-    color: #fff;
-}
-
-.answer {
-    margin: 20px 0 10px;
+#answer {
     color: #222;
     font-size: 20px;
+    min-height: 50px;
+    text-align: left;
+    overflow: auto;
 }
