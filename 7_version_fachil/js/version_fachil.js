@@ -17,30 +17,34 @@ function splitAndNumberTransform(phrase){
 
 // Calculates the next version of the version string submitted
 function nextVersion(version){
-	var old_version_array = splitAndNumberTransform(version);
-	var new_version_array = [];
-	var transformed=false;
-	var temp = 0;
+	if(version === ""){
+		return "";
+	}else{
+		var old_version_array = splitAndNumberTransform(version);
+		var new_version_array = [];
+		var transformed=false;
+		var temp = 0;
 
-	for (var i = old_version_array.length - 1; i >= 0; i--) {
-		if(transformed){
-			new_version_array.unshift(old_version_array[i]);
-		}else{
-			if(i===0){
-				new_version_array.unshift(nextNumberLast(old_version_array[i]));
+		for (var i = old_version_array.length - 1; i >= 0; i--) {
+			if(transformed){
+				new_version_array.unshift(old_version_array[i]);
 			}else{
-				temp = nextNumber(old_version_array[i]);
-				if(temp === 0){
-					new_version_array.unshift(temp);
+				if(i===0){
+					new_version_array.unshift(nextNumberLast(old_version_array[i]));
 				}else{
-					new_version_array.unshift(temp);
-					transformed=true;
+					temp = nextNumber(old_version_array[i]);
+					if(temp === 0){
+						new_version_array.unshift(temp);
+					}else{
+						new_version_array.unshift(temp);
+						transformed=true;
+					}
 				}
 			}
 		}
-	}
 
-	return new_version_array.join('.');
+		return new_version_array.join('.');
+	}
 }
 
 // Testing the program...
