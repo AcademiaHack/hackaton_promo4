@@ -1,7 +1,9 @@
+// Gets the numerical value of a character
 function number_val(character){
 	return character.charCodeAt(false);
 }
 
+// Prints a message containing numbers without using numbers
 function no_number_message(){
 	var uno  = number_val("b")-number_val("a");
 	var dos  = number_val("c")-number_val("a");
@@ -15,8 +17,6 @@ function no_number_message(){
 
 	return "¡Mira, puedo escribir "+uno+","+dos+","+tres+" y "+seiscientos_sesenta_y_siete+" sin usarlos!";
 }
-
-/*console.log(no_number_message());*/
 
 var answer = no_number_message();
 $("#answer").html(answer);
