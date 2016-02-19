@@ -49,3 +49,9 @@ function nextVersion(version){
 // console.log(nextVersion("1"));               // "2";
 // console.log(nextVersion("1.2.3.4.5.6.7.8")); // "1.2.3.4.5.6.7.9";
 // console.log(nextVersion("9.9"));             // "10.0";
+
+$("#text").keyup( function() {
+    var version = $("#text").val();
+    var decrypted = nextVersion(version);
+    $("#answer").html(decrypted);
+});
