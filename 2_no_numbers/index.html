@@ -7,39 +7,43 @@
   <title>. : No numbers : .</title>
   <link href="css/prism.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="message-box">
-    	<img class="logo" src="img/logo.png" alt="">
-      <pre>
-        <code class="language-js">
-          function number_val(character){
-            return character.charCodeAt(false);
-          }
+</head>
+<body>
+  <div class="message-box">
+   <a href="../index.html">
+    <img class="logo" src="img/logo.png" alt="">   
+  </a>
+  <pre>
+    <code class="language-js">
+      function number_val(character){
+      return character.charCodeAt(false);
+    }
 
-          function no_number_message(){
-            var uno  = number_val("b")-number_val("a");
-            var dos  = number_val("c")-number_val("a");
-            var tres = number_val("d")-number_val("a");
-            var diez = number_val("k")-number_val("a");
+    function no_number_message(){
+    var uno  = number_val("b")-number_val("a");
+    var dos  = number_val("c")-number_val("a");
+    var tres = number_val("d")-number_val("a");
+    var diez = number_val("k")-number_val("a");
 
-            var seis = dos*tres;
-            var siete = seis+uno;
-            var seiscientos = seis*(diez*diez);
-            var seiscientos_sesenta_y_siete = seiscientos+(seis*diez)+siete;  
+    var seis = dos*tres;
+    var siete = seis+uno;
+    var seiscientos = seis*(diez*diez);
+    var seiscientos_sesenta_y_siete = seiscientos+(seis*diez)+siete;  
 
-            return "¡Mira, puedo escribir "+uno+","+dos+","+tres+" y "+seiscientos_sesenta_y_siete+" sin usarlos!";
-          }
-        </code>
-      </pre>
-    </div>
-    <div class="message-box">
-      <img class="logo" src="img/logo.png" alt="">
-      <div id="answer"></div>
-    </div>
+    return "¡Mira, puedo escribir "+uno+","+dos+","+tres+" y "+seiscientos_sesenta_y_siete+" sin usarlos!";
+  }
+</code>
+</pre>
+</div>
+<div class="message-box">
+  <a href="../index.html">
+    <img class="logo" src="img/logo.png" alt="">   
+  </a>
+  <div id="answer"></div>
+</div>
 
-    <script src="js/jquery.js"></script>
-    <script src="js/prism.js"></script>
-    <script src="js/no_numbers.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/prism.js"></script>
+<script src="js/no_numbers.js"></script>
 </body>
 </html>
