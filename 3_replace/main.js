@@ -12,6 +12,6 @@ String.prototype.replaceAll = function(textToFind, newText) {
   return current;
 }
 
-var test = "El topo, el paco, topo, puerco, tapo, alto, petopodro";
-console.log(test.replaceAll("topo","hack"));
+var test = "a test";
+console.log(test.replaceAll("test","not a test"));
 console.log(test);
