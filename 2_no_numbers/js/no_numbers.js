@@ -16,4 +16,7 @@ function no_number_message(){
 	return "¡Mira, puedo escribir "+uno+","+dos+","+tres+" y "+seiscientos_sesenta_y_siete+" sin usarlos!";
 }
 
-console.log(no_number_message());
+/*console.log(no_number_message());*/
+
+var answer = no_number_message();
+$("#answer").html(answer);

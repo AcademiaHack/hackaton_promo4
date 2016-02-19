@@ -1,0 +1,67 @@
+@font-face {
+	font-family: 'Quicksand';
+	src: url(../font/quicksand.otf);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+html,
+body {
+	font-family: 'Quicksand';
+	height: 100%;
+	margin: 0;
+	background-image: url(../img/blue_background.jpg);
+}
+
+.message-box {
+	position: relative;
+	width: 80%;
+	background-color: #fff;
+	text-align: center;
+	margin: 80px 10% 10px;
+}
+
+.message-box pre[class*="language-"] {
+	margin: 0;
+	padding: 0;
+	overflow-y: hidden;
+}
+
+.message-box code[class*="language-"],
+.message-box pre[class*="language-"] {
+	line-height: 1;
+}
+
+.message-box .logo {
+	margin: -70px auto 0;
+}
+
+.message-box input {
+	display: block;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	font-size: 20px;
+	color: #555;
+	line-height: 1.5;
+	margin: 10px 0;
+}
+
+.message-box input:focus {
+	outline: 0;
+}
+
+#answer {
+    height: 50px;
+    margin: 10px 0;
+    font-size: 20px;
+    color: #555;
+}

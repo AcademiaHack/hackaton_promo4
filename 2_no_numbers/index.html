@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>. : No numbers : .</title>
+  <link href="css/prism.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="message-box">
+    	<img class="logo" src="img/logo.png" alt="">
+      <pre>
+        <code class="language-js">
+          function number_val(character){
+            return character.charCodeAt(false);
+          }
+
+          function no_number_message(){
+            var uno  = number_val("b")-number_val("a");
+            var dos  = number_val("c")-number_val("a");
+            var tres = number_val("d")-number_val("a");
+            var diez = number_val("k")-number_val("a");
+
+            var seis = dos*tres;
+            var siete = seis+uno;
+            var seiscientos = seis*(diez*diez);
+            var seiscientos_sesenta_y_siete = seiscientos+(seis*diez)+siete;  
+
+            return "¡Mira, puedo escribir "+uno+","+dos+","+tres+" y "+seiscientos_sesenta_y_siete+" sin usarlos!";
+          }
+        </code>
+      </pre>
+    </div>
+    <div class="message-box">
+      <img class="logo" src="img/logo.png" alt="">
+      <div id="answer"></div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/no_numbers.js"></script>
+</body>
+</html>
