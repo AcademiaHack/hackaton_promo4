@@ -89,14 +89,14 @@ function oddHackbonacci(number){
 }
 
 // Testing the program....
-// var value = oddHackbonacci(15);
+// var value = oddHackbonacciArray(15);
 // console.log(value);
 
 $("#text").keyup( function() {
-  var number = $(this).val();
+  var number = parseInt($(this).val());
   var odd = oddHackbonacci(number);
-  var array = oddHackbonacciArray(parseInt(number));
-  console.log(array);
-  $("#answer_array").html(array);
+  var array = hackbonacciArray(number);
+  console.log(""+ array);
+  $("#answer_array").html("["+array+"]");
   $("#answer_odd").html(odd);
 });
