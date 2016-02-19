@@ -41,10 +41,10 @@ function hackPizza(cuts){
 	}
 }
 
-console.log(hackPizza(6));
+/*console.log(hackPizza(6));*/
 
 $("#text").keyup( function() {
   var example_test = $(this).val();
-  var replace = hackPizza(parseInt(example_test));
+  var replace = example_test.length > 0 ? hackPizza(parseInt(example_test)) : "<img class='pizza' src='img/pizza.png'>";
   $("#answer").html(replace);
 });
